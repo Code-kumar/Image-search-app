@@ -7,6 +7,8 @@ import TextField from '@mui/material/TextField';
 
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Typography from '@mui/material/Typography';
+
 
 const ImageSearch = () => {
     
@@ -24,7 +26,7 @@ const ImageSearch = () => {
         <>
             <Box m={5}>
                 <Grid container direction="column" alignItems="center" justify="center">
-                    <TextField id="outlined-basic" label="Search for Image" fullWidth={true} variant="outlined"
+                    <TextField id="outlined-basic" label="Search for Image" sx={{ width: '50%' }} variant="outlined"
                     onChange={(e) => {
                         setPhoto(e.target.value)
                     }} />
@@ -37,21 +39,24 @@ const ImageSearch = () => {
                 </Grid>
 
             </Box>
-            <ImageList sx={{ width: 'auto' }} cols={3} >
+            <ImageList sx={{ width: '80%', ml: '10%' }} cols={3} >
                 {result && result.map((value) => (
-                    <ImageListItem key={value.id}>
+                    <ImageListItem key={value.id} sx={ {border: 1, borderColor: 'grey.500', borderRadius: '10px',  overflow: 'hidden', m: 1} }>
                     <img
                         src={`${value.urls.small}?w=164&h=164&fit=crop&auto=format`}
                         alt={value.title}
                         loading="lazy"
                     />
-                    <h2>Likes: {value.likes}</h2>
-                        <a href={value.links.download} download target='_blank' style={{textDecoration: 'none'}}>
-                        <Button variant="contained" color="secondary" sx={{ m: 'auto' }} align="center" size="large" 
-                        style={{fontSize: 15, marginTop: 20, textTransform: "none"}} onClick={changePhoto}>
-                            View
-                        </Button>
-                    </a>
+                        <Grid container alignItems="center" sx={{ justifyContent: 'space-between', mt: 2, mb: 2 }}>
+                            
+                            <Typography variant="h6" m="0" ml="4%" gutterBottom> Likes: {value.likes} </Typography>
+                            <a href={value.links.download} download target='_blank' style={{textDecoration: 'none'}}>
+                                <Button variant="contained" color="secondary" align="center" size="large" 
+                                style={{fontSize: 15, marginRight: 20, textTransform: "none"}} onClick={changePhoto}>
+                                    View
+                                </Button>
+                            </a>
+                        </Grid>
                     </ImageListItem>
                 ))}
             </ImageList>
