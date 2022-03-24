@@ -1,10 +1,6 @@
 @media screen and (max-width: 768px) {
     .images-con{
         column-count: 2 !important;
-        
-        /* grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
-        */
     }
     .images-con2{
         width: 100% !important;

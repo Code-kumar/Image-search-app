@@ -4,7 +4,6 @@ import { Button, Grid, Box } from "@mui/material";
 import ImageListItem from '@mui/material/ImageListItem';
 import Typography from '@mui/material/Typography';
 
-
 const ImageResutls = (props) =>{
     return(
         <>

@@ -41,7 +41,6 @@ const ImageSearch = () => {
                             </Button>
                         </Box>
                     </form>
-
                 </Grid>
             </Box>
 
@@ -49,35 +48,10 @@ const ImageSearch = () => {
             <Box sx={{ width: '80%', ml: '10%'}} className="images-con2" >
                 <ImageList variant="masonry" cols={4} gap={8} className="images-con">
                     
-                {result.map((value) => (
-                    <ImageResutls id={value.id} par={result} res={value.likes} image={value.urls.small} link={value.links.download} likes={value.likes}/>
-                ))}
-                {/* {result && result.map((value) => (
-                        
-                        <ImageListItem key={value.urls.id} sx={ {border: 1, borderColor: 'grey.500', borderRadius: '6px', overflow: 'hidden'}}>
-
-
-                            <img
-                            src={`${value.urls.small}?w=248&fit=crop&auto=format`}
-                            srcSet={`${value.urls.small}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                            alt={value.title}
-                            loading="lazy"
-                            />
-
-                            <Grid container alignItems="center" sx={{ justifyContent: 'space-between', p: 2 }} className="lower-row">
-                            <Typography variant="h6" m="0" gutterBottom> Likes: {value.likes} </Typography>
-                                        
-                                
-                                 <a href={value.links.download} download target='_blank' style={{textDecoration: 'none'}}>
-                                     <Button variant="contained" color="secondary" align="center" size="large" 
-                                     style={{fontSize: 15, textTransform: "none"}} >
-                                         View
-                                     </Button>
-                                 </a>
-                             </Grid>
-                         </ImageListItem>
+                    {result.map((value) => (
+                        <ImageResutls id={value.id} par={result} res={value.likes} image={value.urls.small} link={value.links.download} likes={value.likes}/>
+                    ))}
                     
-                    ))} */}
                 </ImageList>
                 </Box>
         </>
