@@ -1,5 +1,5 @@
 # Image Finder app using Reactjs
-Date: 3/24/2022.
+Date: 3/24/2022
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
